@@ -19,6 +19,7 @@
                     //prompt('NAME:', response.StudentName);
                     //prompt('DATE:', response.Date);
                     //prompt('STATUS:', response.AttendenceStatus);
+                    //commented by harsh
                     $scope.submittedData = response;
                     $scope.message = "submitted successfully!!!";
                 });
