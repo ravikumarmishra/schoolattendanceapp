@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+       table {
+              border-collapse: separate;
+              border-spacing: 1px;
+              border-radius: 5px;
+              background: #fff;
+              margin: 25px auto;
+              box-shadow: 0px 0px 5px;
+              text-align:center;
+              
+            }
+
+            th {
+              font-family: calibri;
+              font-size: 18px;
+              font-weight: bold;
+              color: #fff;
+              text-align: center;
+              padding: 20px;
+              background-image: linear-gradient(#d3d3d3, #646f7f, #f2f2f2);
+              border: 1.5px solid #858d99;
+            }
+            th:first-child {
+              -moz-border-radius-topleft: 5px;
+              -webkit-border-top-left-radius: 5px;
+              border-top-left-radius: 5px;
+            }
+            th:last-child {
+              -moz-border-radius-topright: 5px;
+              -webkit-border-top-right-radius: 5px;
+              border-top-right-radius: 5px;
+            }
+
+            tr td {
+              font-family: cursive;
+              font-weight: 700;
+              color: #5f6062;
+              font-size: 13px;
+              padding: 20px 20px 20px 20px;
+              border-right: 1px solid #e0e0e0;
+              transition: all 1s;
+            }
+
+            tr:nth-child(2n) {
+              background: #f0f3f5;
+            }
+           
+             tbody:hover > tr:hover td {
+              text-shadow: none;
+              color: #000;  
+              opacity: 1;
+            }
+        #heading1{
+            font-style:oblique;
+            color:midnightblue;
+            font-family:'Monotype Corsiva';
+        }
+        .scrollit{
+            overflow:scroll;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="showAttendanceController">
+        <h1 id="heading1">Attendance Details:</h1>
+        
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>RollNo.</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="scrollit">
+                    <tr ng-repeat="attendancedata in attendenceDetails">
+                        <td>{{attendancedata.StudentId}}</td>
+                        <td>{{attendancedata.StudentName}}</td>
+                        <td>{{attendancedata.Date}}</td>
+                        <td>{{attendancedata.AttendenceStatus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+       
+    </div>
+   
+</body>
+</html>

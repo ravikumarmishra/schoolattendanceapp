@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "description": "StudentAttendenceSystem.Business Class Library",
+  "authors": [ "M1035826" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "StudentAttendenceSystem.DataAccess": "1.0.0-*",
+    "StudentAttendenceSystem.Entities": "1.0.0-*"
+  }
+}

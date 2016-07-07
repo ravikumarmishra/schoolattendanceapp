@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .submitted{
+            background-color:aqua;
+            border-radius:2px;
+            transition: all linear 0.5s;
+        }
+         #heading1{
+            font-style:oblique;
+            color:midnightblue;
+            font-family:'Monotype Corsiva';
+        }
+    </style>
+</head>
+<body>
+    <div class="container" ng-controller="addAttendanceController">
+        <h1 id="heading1">Add Attendance:</h1>
+        <div class="col-sm-8 col-sm-offset-2">
+            <!-- FORM -->
+            <!-- pass in the variable if our form is valid or invalid -->
+            <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+                <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                <!-- NAME -->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" ng-model="student.StudentName" required>
+                    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+                </div>
+
+                <!-- DATE -->
+                <div class="form-group">
+                    <label>Date</label>
+                    <input class="form-control" type="date" id="dateId" name="enddate" ng-model="student.Date" options="dateOptions"
+                           opened="opened" custom-datepicker ng-required="true" />
+                </div>
+
+                <!-- ATTENDANCE STATUS -->
+                <div class="form-group">
+                    <label>Status</label>
+                    <input type="text" name="status" class="form-control" ng-model="student.AttendenceStatus">
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="show=true">Submit</button>
+                <p>{{message}}</p>
+            </form>
+            <div class="submitted" ng-show="show">
+                <ul>
+                    <li>{{submittedData.StudentName}}</li>
+                    <li>{{submittedData.Date}}</li>
+                    <li>{{submittedData.AttendenceStatus}}</li>
+                </ul>
+            </div>
+
+        </div><!-- col-sm-8 -->
+    </div><!-- /container -->
+</body>
+</html>
